@@ -1,0 +1,75 @@
+.card {
+	--overlay: hsl(0, 0%, 0%, 0.7);
+	--radius: 1.2em;
+
+	display: grid;
+	grid-template-columns: 1fr;
+
+	width: 25rem;
+	aspect-ratio: 1 /1;
+
+	> * {
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+
+	h3 {
+		color: #fff;
+	}
+
+	&:hover {
+		.heading {
+			opacity: 0;
+		}
+
+		.info {
+			clip-path: inset(0);
+		}
+	}
+
+	.visual {
+		border-radius: var(--radius);
+		position: relative;
+
+		img {
+			width: 100%;
+		}
+
+		.heading {
+			position: absolute;
+			z-index: 2;
+			// background-color: var(--overlay);
+
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			padding-inline: 1.5em;
+			padding-block: 0.4em;
+			border-radius: 0 0 var(--radius) var(--radius);
+
+			transition: opacity 300ms;
+		}
+	}
+
+	.info {
+		background-color: var(--overlay);
+		border-radius: var(--radius);
+
+		position: relative;
+		z-index: 1;
+
+		color: white;
+
+		padding-inline: 1.5em;
+		padding-block: 1.5em;
+
+		display: grid;
+		gap: 1.5em;
+		align-content: start;
+
+		clip-path: inset(90% 0 0 0);
+
+		transition: clip-path 300ms;
+	}
+}

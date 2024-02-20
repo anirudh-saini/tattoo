@@ -61,3 +61,21 @@
 //         }
 //     }
 // }
+
+.experience {
+	margin-block: 2em;
+
+	display: grid;
+	gap: 4em;
+
+	.heading {
+		font-size: clamp(2rem, 2.75vw, 2.5rem);
+
+		text-align: center;
+	}
+
+	.cards {
+		display: flex;
+		justify-content: space-around;
+	}
+}
